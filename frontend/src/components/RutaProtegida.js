@@ -1,13 +1,13 @@
 import { Navigate } from 'react-router-dom';
 
 function RutaProtegida({ children }) {
-  const token = localStorage.getItem('token');
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
 
-  // Si no hay token, redirige al login
-  if (!token) {
+  if (!usuario || !usuario.token) {
     return <Navigate to="/login" replace />;
   }
 
   return children;
 }
+
 export default RutaProtegida;

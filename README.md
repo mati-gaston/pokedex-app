@@ -1,7 +1,7 @@
 # Proyecto Full Stack - Gestor de Usuarios y Pokedex
 
-![app](/public/pokeport.png)
-![app](/public/pokeport2.png)
+![app](frontend/public/pokeport.png)
+![app](frontend/public/pokeport2.png)
 
 Aplicación web full stack construida con React (frontend) y Node.js + Express (backend), conectada a una base de datos MySQL. 
 Permite gestionar usuarios con roles y visualizar una Pokedex con paginación y búsqueda.

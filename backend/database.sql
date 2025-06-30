@@ -7,6 +7,7 @@ CREATE TABLE usuarios (
   creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) COLLATE='utf8mb4_general_ci';
 
--- Usuario de prueba: admin@mail.com / admin123
+-- Usuario de prueba: admin@mail.com - password: admin123
+
 INSERT INTO usuarios (nombre, email, password, rol) VALUES
 ('Administrador', 'admin@mail.com', '$2a$10$k4B8cZ3e1FNR07nZZz5duumF0QKElK93rmOZpPRu1QU68Yr6Phz4K', 'admin');

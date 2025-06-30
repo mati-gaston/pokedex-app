@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 function GestionUsuarios() {
-    console.log('🧩 Vista de gestión de usuarios cargada');
   const [usuarios, setUsuarios] = useState([]);
   const [mensaje, setMensaje] = useState('');
   const [modoEdicion, setModoEdicion] = useState(false);
