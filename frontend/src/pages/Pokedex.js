@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
+/**
+ * Componente Pokedex
+ * Muestra una lista de Pokémon con paginación, buscador y detalles.
+ */
 function Pokedex() {
   const [pokemones, setPokemones] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [paginaActual, setPaginaActual] = useState(1);
   const [busqueda, setBusqueda] = useState('');
 
+    /**
+   * useEffect: se ejecuta cada vez que cambia la página.
+   * Carga 20 Pokémon desde la API según el número de página.
+   */
   useEffect(() => {
     const obtenerPokemones = async () => {
       setCargando(true);
@@ -15,6 +23,7 @@ function Pokedex() {
         const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
         const datos = await respuesta.json();
 
+        // Carga de detalles de cada pokemon
         const detalles = await Promise.all(
           datos.results.map(async (pokemon) => {
             const res = await fetch(pokemon.url);
@@ -24,7 +33,6 @@ function Pokedex() {
 
         setPokemones(detalles);
       } catch (error) {
-        console.error('Error al obtener pokemones:', error);
       } finally {
         setCargando(false);
       }
@@ -72,9 +80,7 @@ function Pokedex() {
                   <div className="card-body">
                     <h5 className="card-title text-capitalize">{poke.name}</h5>
                     <p className="card-text">ID: {poke.id}</p>
-                    <p className="card-text">
-                      <strong>Tipos:</strong> {poke.types.map(t => t.type.name).join(', ')}
-                    </p>
+                    <p className="card-text"> <strong>Tipos:</strong><br/> {poke.types.map(t => ( <span key={t.type.name} className="badge-type">{t.type.name}</span> ))} </p>
                     <p className="card-text">
                       <strong>Habilidades:</strong> {poke.abilities.map(a => a.ability.name).join(', ')}
                     </p>

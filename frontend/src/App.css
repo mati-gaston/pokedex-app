@@ -1,3 +1,4 @@
+/* estilos barra de navegacion */ 
 .custom-navbar {
   background-color: #f9f5f0; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +15,6 @@
   font-weight: bold;
   color: #d13f3f;
 }
-
 
 /* estilos Pokedex */ 
 
@@ -75,3 +75,60 @@ body::before {
   opacity: 0.7;
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Estios pokedex card */ 
+
+.pokedex-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #d32f2f;
+  text-shadow: 1px 1px 2px #ddd;
+}
+
+.pokemon-card {
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-img {
+  width: 96px;
+  height: 96px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #343a40;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.badge-type {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  margin: 0.1em;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+  color: #212121;
+  text-transform: capitalize;
+}

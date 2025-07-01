@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
 
+/**
+ * Componente de Inicio
+ * Muestra la pantalla de bienvenida con una breve descripción de la app
+ * y enlaces para ver la Pokedex o iniciar sesión.
+ */
 function Inicio() {
   return (
     <div className="container text-center mt-5">

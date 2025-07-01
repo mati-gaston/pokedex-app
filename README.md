@@ -1,7 +1,7 @@
 # Proyecto Full Stack - Gestor de Usuarios y Pokedex
 
-<img src="frontend/public/pokeport.png" alt="Pokedex App" width="400"/>
-<img src="frontend/public/pokeport2.png" alt="Pokedex App" width="400"/>
+<img src="frontend/public/pokeport.png" alt="Pokedex App" width="500"/>
+<img src="frontend/public/pokeport2.png" alt="Pokedex App" width="500"/>
 
 Aplicación web full stack construida con React (frontend) y Node.js + Express (backend), conectada a una base de datos MySQL. 
 Permite gestionar usuarios con roles y visualizar una Pokedex con paginación y búsqueda.
@@ -27,26 +27,26 @@ Permite gestionar usuarios con roles y visualizar una Pokedex con paginación y 
 
 ## 🧑‍💻 Instalación y ejecución local
 
-### ⚠️ Requisitos previos
+## ⚠️ Requisitos previos
 - Tener instalado Node.js.
 - Tener MySQL instalado y un servidor corriendo.
 
 
-#### 🔧 Pasos para iniciar el proyecto:
+### 🔧 Pasos para iniciar el proyecto:
 
-#  Clonar el repositorio
+##  Clonar el repositorio
 https://github.com/usuario/nombre-del-repo.git
 
-#  Ir a la carpeta del backend
-cd ./backend    # Haga el comando para moverse a la carpeta del proyecto
-npm install     # Instala las dependencias necesarias
-npm start       # Inicia el servidor backend (puerto 4000 por defecto)
+##  Ir a la carpeta del backend
+- cd ./backend    # Haga el comando para moverse a la carpeta del proyecto
+- npm install     # Instala las dependencias necesarias
+- npm start       # Inicia el servidor backend (puerto 4000 por defecto)
+- touch .env      # Pegar en este nuevo archivo los datos ya guardados en (/database.sql) 
 
-#  Abrir una nueva terminal y dirigirse al frontend
+##  Abrir una nueva terminal y dirigirse al frontend
 cd ./frontend   # Haga el comando para moverse a la carpeta del proyecto
 npm install     # Instala las dependencias necesarias
 npm start       # Inicia la app React (puerto 3000 por defecto)
-
 
 
 # 🛠️ Configuración de la base de datos
@@ -56,10 +56,10 @@ npm start       # Inicia la app React (puerto 3000 por defecto)
 3. Ejecutar el script `database.sql` ubicado en la carpeta `/backend`.
    Este script creará la tabla `usuarios` y cargará un usuario de prueba.
 
-#### 👤 Usuario de prueba para ingresar
+#### 👤 Usuario para ingresar
 
-- **Email:** `admin@mail.com`
-- **Contraseña:** `admin123`
+## Ver datos en /database.sql 
+
 
 ## 💾 Tecnologías utilizadas
 
@@ -75,4 +75,5 @@ npm start       # Inicia la app React (puerto 3000 por defecto)
 - MySQL
 - bcryptjs
 
-# Proyecto desarrollado por [Matias Caravario].
+
+# Proyecto desarrollado por Matias Caravario.

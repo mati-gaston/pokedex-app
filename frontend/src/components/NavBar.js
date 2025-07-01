@@ -1,10 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 
+// Componente que muestra la barra de navegacion.
 function NavBar() {
   const navigate = useNavigate();
 
   const usuario = JSON.parse(localStorage.getItem('usuario'));
 
+// Función para cerrar sesión, borra el usuario del localStorage y redirige al inicio
   const cerrarSesion = () => {
     localStorage.removeItem('usuario');
     navigate('/');

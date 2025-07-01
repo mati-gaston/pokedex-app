@@ -2,6 +2,11 @@ import { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
+/**
+ * Componente Login
+ * Muestra un formulario para iniciar sesión.
+ * Si el usuario ya inicio, redirige automáticamente según su rol.
+ */
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -9,7 +14,11 @@ function Login() {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // 🚀 Verifica si el usuario ya está logueado
+/**
+   * Verifica si el usuario ya está logueado.
+   * Si es así, muestra un mensaje y redirige automáticamente.
+   */
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     const usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -23,6 +32,10 @@ function Login() {
     }
   }, [navigate]);
 
+    /**
+   * Envía los datos del formulario al backend para iniciar sesión.
+   * Si el login es exitoso, guarda el token y los datos del usuario en el contexto.
+   */
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -54,10 +67,7 @@ function Login() {
   return (
     <div className="container mt-5">
       <h2>Iniciar Sesión</h2>
-
-      {/* Mensaje si ya está logueado */}
       {mensaje && <div className="alert alert-info">{mensaje}</div>}
-
       {!mensaje && (
         <form onSubmit={handleLogin}>
           <div className="mb-3">

@@ -4,7 +4,11 @@ const jwt = require('jsonwebtoken');
 
 const SECRET_KEY = 'mi_clave_secreta';
 
-const loginUser = (req, res) => {
+/**
+ * Controlador para iniciar sesión.
+ * Busca el usuario por email, compara contraseñas y genera un token JWT si todo es válido.
+ */
+const iniciarSesion = (req, res) => {
   const { email, password } = req.body;
 
   const sql = 'SELECT * FROM usuarios WHERE email = ?';
@@ -55,5 +59,5 @@ const loginUser = (req, res) => {
 };
 
 module.exports = {
-  loginUser
+  iniciarSesion
 };

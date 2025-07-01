@@ -4,7 +4,7 @@ const db = require('../db');
 const bcrypt = require('bcryptjs');
 const verificarToken = require('../middleware/authMiddleware');
 
-// 🔹 Obtener todos los usuarios
+//  Obtener todos los usuarios
 router.get('/', verificarToken, (req, res) => {
   db.query('SELECT id, nombre, email, rol FROM usuarios', (err, resultados) => {
     if (err) return res.status(500).json({ mensaje: 'Error al obtener usuarios' });
@@ -12,7 +12,7 @@ router.get('/', verificarToken, (req, res) => {
   });
 });
 
-// 🔹 Crear nuevo usuario
+//  Crear nuevo usuario
 router.post('/', verificarToken, (req, res) => {
   const { nombre, email, password, rol } = req.body;
 
@@ -30,7 +30,7 @@ router.post('/', verificarToken, (req, res) => {
   });
 });
 
-// 🔹 Actualizar usuario
+//  Actualizar usuario
 router.put('/:id', verificarToken, (req, res) => {
   const { nombre, email, rol } = req.body;
   const { id } = req.params;
@@ -45,7 +45,7 @@ router.put('/:id', verificarToken, (req, res) => {
   );
 });
 
-// 🔹 Eliminar usuario
+//  Eliminar usuario
 router.delete('/:id', verificarToken, (req, res) => {
   const { id } = req.params;
 

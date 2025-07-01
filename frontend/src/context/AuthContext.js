@@ -12,16 +12,18 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  // Función para iniciar sesión: guarda usuario en estado y localStorage
   const login = (datosUsuario) => {
     setUsuario(datosUsuario);
     localStorage.setItem('usuario', JSON.stringify(datosUsuario));
-    localStorage.setItem('token', datosUsuario.token); // ✅ Agregado
+    localStorage.setItem('token', datosUsuario.token); 
   };
 
+    // Función para cerrar sesión: limpia estado y localStorage
   const logout = () => {
     setUsuario(null);
     localStorage.removeItem('usuario');
-    localStorage.removeItem('token'); // ✅ Agregado
+    localStorage.removeItem('token'); 
   };
 
   return (

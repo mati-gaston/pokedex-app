@@ -1,3 +1,6 @@
+// Middleware que verifica el token JWT enviado en el encabezado Authorization.
+// Si es válido, agrega los datos del usuario a req.usuario y continúa con la ejecución.
+// Si no es válido o no está presente, devuelve un error 401 o 403.
 const jwt = require('jsonwebtoken');
 
 const SECRET_KEY = 'mi_clave_secreta'; // Usá la misma que en el login

@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 
-function AdminRoute({ children }) {
+// Funcion de ruta protegida que permite el acceso solo a administradores
+function AdminRuta({ children }) {
   const usuario = JSON.parse(localStorage.getItem('usuario'));
 
   if (!usuario || !usuario.token || usuario.rol !== 'admin') {
@@ -10,4 +11,4 @@ function AdminRoute({ children }) {
   return children;
 }
 
-export default AdminRoute;
+export default AdminRuta;

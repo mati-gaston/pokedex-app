@@ -10,6 +10,10 @@ function GestionUsuarios() {
 
   const token = JSON.parse(localStorage.getItem('usuario'))?.token;
 
+  /**Funcion obtenerUsuario
+ * Obtiene la lista de usuarios desde el backend y actualiza el estado.
+ * Usa el token almacenado en localStorage para la autenticación.
+ * */
   const obtenerUsuarios = async () => {
     try {
       const respuesta = await fetch('http://localhost:4000/api/usuarios', {
@@ -34,6 +38,11 @@ function GestionUsuarios() {
     obtenerUsuarios();
   }, []);
 
+  /**
+ * Función eliminarUsuario
+ * Elimina un usuario tras confirmar mediante SweetAlert.
+ * Luego actualiza la lista de usuarios.
+ */
   const eliminarUsuario = async (id) => {
     const confirmacion = await Swal.fire({
       title: '¿Estás seguro?',
@@ -64,16 +73,29 @@ function GestionUsuarios() {
     }
   };
 
+  /**
+ * Función editarUsuario
+ * Activa el modo edición y carga los datos del usuario seleccionado en el formulario.
+ */
   const editarUsuario = (usuario) => {
     setModoEdicion(true);
     setUsuarioEditado(usuario);
     setMensaje('');
   };
 
+  /**
+ * Función manejarCambio
+ * Actualiza el estado del usuario en edición conforme se completan los campos del formulario.
+ */
   const manejarCambio = (e) => {
     setUsuarioEditado({ ...usuarioEditado, [e.target.name]: e.target.value });
   };
 
+  /**
+ * Función guardarEdicion
+ * Envía los datos modificados del usuario al backend para actualizar la información.
+ * Luego actualiza la lista de usuarios.
+ */
   const guardarEdicion = async (e) => {
     e.preventDefault();
     try {
@@ -98,10 +120,19 @@ function GestionUsuarios() {
     }
   };
 
+  /**
+ * Función manejarCambioNuevo
+ * Actualiza el estado del nuevo usuario conforme se completan los campos del formulario.
+ */
   const manejarCambioNuevo = (e) => {
     setNuevoUsuario({ ...nuevoUsuario, [e.target.name]: e.target.value });
   };
 
+  /**
+ * Función crearUsuario
+ * Envía los datos del nuevo usuario al backend para su creación.
+ * Luego limpia el formulario y actualiza la lista de usuarios.
+ */
   const crearUsuario = async (e) => {
     e.preventDefault();
     try {
@@ -122,7 +153,6 @@ function GestionUsuarios() {
     }
   };
 
-// ...importaciones y lógica original arriba...
 
   return (
     <div className="container mt-4">

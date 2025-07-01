@@ -8,11 +8,11 @@ import Login from './pages/Login';
 import Pokedex from './pages/Pokedex';
 import Admin from './pages/Admin';
 import Error from './pages/Error';
-import AdminRoute from './components/AdminRoute';
+import AdminRuta from './components/AdminRuta';
 import RutaProtegida from './components/RutaProtegida';
 import GestionUsuarios from './pages/GestionUsuarios';
-import TestPoke from './pages/TestPoke';
 import { AuthProvider } from './context/AuthContext'; 
+import VolverArriba from './components/VolverArriba';
 
 function App() {
   return (
@@ -22,8 +22,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/testpoke" element={<TestPoke />} />
-
           <Route 
             path="/pokedex" 
             element={
@@ -37,14 +35,15 @@ function App() {
           <Route 
             path="/admin" 
             element={
-              <AdminRoute>
+              <AdminRuta>
                 <Admin />
-              </AdminRoute>
+              </AdminRuta>
             } 
           />
 
           <Route path="*" element={<Error />} />
         </Routes>
+         <VolverArriba />
       </BrowserRouter>
     </AuthProvider>
   );

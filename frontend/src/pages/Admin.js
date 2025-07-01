@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
-
+/**
+ * Componente Admin
+ * Muestra un panel de bienvenida para el administrador con acceso al gestor de usuarios.
+ **/
 function Admin() {
   return (
     <div className="container mt-5">
