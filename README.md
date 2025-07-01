@@ -44,9 +44,9 @@ https://github.com/usuario/nombre-del-repo.git
 - touch .env      # Pegar en este nuevo archivo los datos ya guardados en (/database.sql) 
 
 ##  Abrir una nueva terminal y dirigirse al frontend
-cd ./frontend   # Haga el comando para moverse a la carpeta del proyecto
-npm install     # Instala las dependencias necesarias
-npm start       # Inicia la app React (puerto 3000 por defecto)
+- cd ./frontend   # Haga el comando para moverse a la carpeta del proyecto
+- npm install     # Instala las dependencias necesarias
+- npm start       # Inicia la app React (puerto 3000 por defecto)
 
 
 # 🛠️ Configuración de la base de datos
