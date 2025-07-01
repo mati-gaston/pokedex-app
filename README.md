@@ -35,18 +35,18 @@ Permite gestionar usuarios con roles y visualizar una Pokedex con paginación y 
 ### 🔧 Pasos para iniciar el proyecto:
 
 ##  Clonar el repositorio
-https://github.com/usuario/nombre-del-repo.git
+https://github.com/mati-gaston/pokedex-app.git
 
 ##  Ir a la carpeta del backend
-- cd ./backend    # Haga el comando para moverse a la carpeta del proyecto
-- npm install     # Instala las dependencias necesarias
-- npm start       # Inicia el servidor backend (puerto 4000 por defecto)
-- touch .env      # Pegar en este nuevo archivo los datos ya guardados en (/database.sql) 
+- cd pokedex-app / cd backend           # Haga el comando para moverse a la carpeta del proyecto
+- npm install                           # Instala las dependencias necesarias
+- npm start                             # Inicia el servidor backend (puerto 4000 por defecto)
+- Crea un nuevo archivo llamado .env    # Pegar en este nuevo archivo los datos ya guardados en (/database.sql) 
 
 ##  Abrir una nueva terminal y dirigirse al frontend
-- cd ./frontend   # Haga el comando para moverse a la carpeta del proyecto
-- npm install     # Instala las dependencias necesarias
-- npm start       # Inicia la app React (puerto 3000 por defecto)
+- cd pokedex-app / cd frontend   # Haga el comando para moverse a la carpeta del proyecto
+- npm install                    # Instala las dependencias necesarias
+- npm start                      # Inicia la app React (puerto 3000 por defecto)
 
 
 # 🛠️ Configuración de la base de datos
@@ -56,9 +56,9 @@ https://github.com/usuario/nombre-del-repo.git
 3. Ejecutar el script `database.sql` ubicado en la carpeta `/backend`.
    Este script creará la tabla `usuarios` y cargará un usuario de prueba.
 
-#### 👤 Usuario para ingresar
+## 👤 Usuario para ingresar
 
-## Ver datos en /database.sql 
+#### Ver datos en /database.sql 
 
 
 ## 💾 Tecnologías utilizadas
@@ -74,6 +74,7 @@ https://github.com/usuario/nombre-del-repo.git
 - JWT (jsonwebtoken)
 - MySQL
 - bcryptjs
+- dotenv
 
 
 # Proyecto desarrollado por Matias Caravario.
