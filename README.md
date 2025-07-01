@@ -1,4 +1,4 @@
-# Proyecto Full Stack - Gestor de Usuarios y Pokedex
+# Proyecto Full stack - Pokedex + Gestor de usuarios
 
 <img src="frontend/public/pokeport.png" alt="Pokedex App" width="500"/>
 <img src="frontend/public/pokeport2.png" alt="Pokedex App" width="500"/>
@@ -35,16 +35,18 @@ Permite gestionar usuarios con roles y visualizar una Pokedex con paginación y 
 ### 🔧 Pasos para iniciar el proyecto:
 
 ##  Clonar el repositorio
-https://github.com/mati-gaston/pokedex-app.git
 
-##  Ir a la carpeta del backend
-- cd pokedex-app / cd backend           # Haga el comando para moverse a la carpeta del proyecto
-- npm install                           # Instala las dependencias necesarias
+- git clone https://github.com/mati-gaston/pokedex-app.git
+
+##  Ir a la carpeta backend
+- cd pokedex-app/backend                # Desde la terminal, ejecute el comando para moverse a la carpeta del proyecto
+- touch.env                             # Ejecute el comando para crear un archivo .env y obtenga el codigo en (/database.sql) 
+- npm install                           # Instala las dependencias 
 - npm start                             # Inicia el servidor backend (puerto 4000 por defecto)
-- Crea un nuevo archivo llamado .env    # Pegar en este nuevo archivo los datos ya guardados en (/database.sql) 
 
-##  Abrir una nueva terminal y dirigirse al frontend
-- cd pokedex-app / cd frontend   # Haga el comando para moverse a la carpeta del proyecto
+
+##  Ir a la carpeta frontend
+- cd pokedex-app / cd frontend   # Desde una nueva terminal, ejecute el comando para moverse a la carpeta del proyecto
 - npm install                    # Instala las dependencias necesarias
 - npm start                      # Inicia la app React (puerto 3000 por defecto)
 

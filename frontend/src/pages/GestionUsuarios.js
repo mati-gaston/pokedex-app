@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Swal from 'sweetalert2';
 
 function GestionUsuarios() {
@@ -14,29 +14,31 @@ function GestionUsuarios() {
  * Obtiene la lista de usuarios desde el backend y actualiza el estado.
  * Usa el token almacenado en localStorage para la autenticación.
  * */
-  const obtenerUsuarios = async () => {
-    try {
-      const respuesta = await fetch('http://localhost:4000/api/usuarios', {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      const data = await respuesta.json();
+const obtenerUsuarios = useCallback(async () => {
+  try {
+    const respuesta = await fetch('http://localhost:4000/api/usuarios', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await respuesta.json();
 
-      if (Array.isArray(data.usuarios)) {
-        setUsuarios(data.usuarios);
-      } else if (Array.isArray(data)) {
-        setUsuarios(data);
-      } else {
-        setUsuarios([]);
-        setMensaje('Error al obtener los usuarios.');
-      }
-    } catch (error) {
-      setMensaje('No se pudo conectar al servidor.');
+    if (Array.isArray(data.usuarios)) {
+      setUsuarios(data.usuarios);
+    } else if (Array.isArray(data)) {
+      setUsuarios(data);
+    } else {
+      setUsuarios([]);
+      setMensaje('Error al obtener los usuarios.');
     }
-  };
+  } catch (error) {
+    setMensaje('No se pudo conectar al servidor.');
+  }
+}, [token]); 
 
-  useEffect(() => {
-    obtenerUsuarios();
-  }, []);
+
+useEffect(() => {
+  obtenerUsuarios();
+}, [obtenerUsuarios]);
+
 
   /**
  * Función eliminarUsuario
